@@ -1,0 +1,37 @@
+#
+#--- Petar's aliases, for all computers. (Generally useful.)
+#
+#_____________________________________________________________
+alias cls      clear
+alias cd      'pushd $PWD > /dev/null; chdir \!:*; popd +2 >& /dev/null'
+alias back    'pushd > /dev/null'
+alias ll      'ls -lF \!:* | grep -v /$'
+# alias lla     'ls -laF | grep -v /$'
+alias lla      ls -laFrt \|awk \' ' $9 ~ /^[.]/ {print $0} ' \'
+alias ddir    'ls -lF | grep /$'
+alias rm       rm -i
+alias grand_total 'ls -laF \!:* | awk ' \' '{n=n+$5}END{print n}' \'
+alias EXIT     exit
+alias   dotfiles 'find ~/ -name ".*"'
+alias y	       echo "Ahem. You can now stop pressing the Y button..."
+alias pm.wbanner   'echo -n ]2\;\!*'
+alias pm.ibanner   'echo -n ]1\;\!*'
+alias pm.banner    'pm.wbanner \!*; pm.ibanner \!*'
+#banner $myhost
+
+setenv LESS '-X'
+setenv  PAGER    less
+setenv  EDITOR   vi
+alias emacs xemacs -font 10x20 -geometry 80x30
+
+alias pm.adrese	   grep -i \!:1 ~/p/notes/pm.adrese
+alias pm.adrese.add 'cat >> ~/p/notes/pm.adrese'
+alias pm.tel	   grep -i \!:1 ~/p/notes/pm.adrese
+alias pm.tel.add   'cat >> ~/p/notes/pm.adrese'
+alias pm.path      'echo $PATH | awk -F:' \' '{for(i=1;i<=NF;i++) print $i}' \'
+
+alias dec2hex  'printf "%x\n" \!:1' 
+alias hex2dec  'printf "%d\n" 0x\!:1' 
+
+
+echo Done with: aliases
