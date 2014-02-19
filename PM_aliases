@@ -17,7 +17,7 @@ alias y	       echo "Ahem. You can now stop pressing the Y button..."
 alias pm.wbanner   'echo -n ]2\;\!*'
 alias pm.ibanner   'echo -n ]1\;\!*'
 alias pm.banner    'pm.wbanner \!*; pm.ibanner \!*'
-#banner $myhost
+pm.banner $myhost
 
 setenv LESS '-X'
 setenv  PAGER    less
