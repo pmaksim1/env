@@ -1,4 +1,4 @@
 env
 ===
 
-Set up environment
+Set up the Linux environment for multiple accounts.
