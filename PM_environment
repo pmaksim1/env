@@ -1,0 +1,42 @@
+
+#--- Default protection mask bits (in binary)
+#
+umask 022
+
+
+#--- Get around automounter's temporary directories
+#
+alias pwd 'echo $cwd'
+
+
+#--- Make typing bearable.  Terminal type "DEC" works for most keyboards.
+#
+stty dec
+
+
+#--- Don't let me be stupid
+#
+set noclobber                   # prevents redirection into an existing file
+set ignoreeof			# prevent accidental logouts with ^D
+
+
+
+#--- Set tcsh prompt (and run tcsh if not in it already)
+#
+if ( $?tcsh ) then
+   set prompt="${myhost}%~] "		# tcshell: %~ evaluates curr. dir.
+else
+   set prompt="${myhost}] "
+   echo "Are you sure you don't want to run tcsh?"
+endif
+
+#	If interactive, set history to 500 lines, then remember
+#	commands from previous login session.
+#
+if ( $?prompt ) then			# only if in interactive mode
+   set history=500
+   set savehist=500
+   source -h ~/.history
+endif
+
+echo Done with: environment

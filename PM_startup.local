@@ -1,0 +1,33 @@
+#
+#--- Environment startup.  Executed in all cases.
+#
+set PM_cluster = cmsuaf
+if (-e /bin/hostname) then
+   set PM_myhost = `/bin/hostname -s`
+else
+   if (-e /usr/bsd/hostname) then
+      set PM_myhost = `/usr/bsd/hostname -s`
+   else
+      set PM_myhost = `hostname -s`
+   endif
+endif
+set myhost = "$PM_myhost"
+
+##if (`printenv DONE_WITH_CMS_SETUP`x == x) then
+  # CMS setup (default = fnal)
+  # Fnal default: but old versions of CMSSW:
+  ## source /afs/fnal.gov/files/code/cms/setup/cshrc 
+  ##setenv CVSROOT :pserver:anonymous@cdcvs.fnal.gov:/cvs/lpc
+  #
+  ## Local software on UAF (new versions of CMSSW):
+  #source /uscmst1/prod/sw/cms/cshrc uaf
+  #source ~cms/cmsset_default.csh
+  #source /scratch/hep2/cms/cmsset_default.csh
+
+  # setenv SCRAM_ARCH `scramv1 arch`
+  #echo "CMSSW setup done."
+
+  # setenv DONE_WITH_CMS_SETUP yyyy
+##endif
+
+unset autologout

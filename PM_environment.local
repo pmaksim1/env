@@ -1,0 +1,21 @@
+#--- Minimum necess. path for an *interactive* session.
+#
+set path=(. ~/bin $path )
+
+
+#--- Rebuild the path hash table.
+#
+rehash
+
+# setup xemacs
+alias emacs 'xemacs -font 10x20'
+
+#
+#	Define some news variables (necessary for gnus).
+#
+# setenv NNTPSERVER "newscli.fnal.gov"
+setenv DOMAIN `hostname -d`
+
+# setenv IGV_DIR /cdf/data03/s1/hardware/svxii/Analysis
+# setenv SVXDATA /cdf/data03/s1/hardware/svxii
+echo Done with: environment.local
