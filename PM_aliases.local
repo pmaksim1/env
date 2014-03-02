@@ -1,0 +1,10 @@
+set my_ubuntu_rel = `lsb_release -a |& grep Release | cut -d: -f2`
+if ($my_ubuntu_rel == 13.10) then
+   #		   
+   #--- Override emacs alias on Ubuntu 13.10, where there's no xemacs:
+   unalias emacs
+   alias emacs 'emacs -bg black -fg white -font 10x20'
+endif
+
+
+echo Done with: aliases.local
