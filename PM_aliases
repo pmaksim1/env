@@ -22,7 +22,8 @@ pm.banner $myhost
 setenv LESS '-X'
 setenv  PAGER    less
 setenv  EDITOR   vi
-alias emacs xemacs -font 10x20 -geometry 80x30
+# alias emacs xemacs -font 10x20 -geometry 80x30
+alias emacs 'emacs -rv -font 10x20 -geometry 80x30'
 
 alias pm.adrese	   grep -i \!:1 ~/p/notes/pm.adrese
 alias pm.adrese.add 'cat >> ~/p/notes/pm.adrese'
